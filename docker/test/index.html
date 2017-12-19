@@ -1,0 +1,148 @@
+<!DocType html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Jukebox Hero</title>
+    <link href="MusicTest.css" rel="stylesheet">
+</head>
+
+<body class="starter">
+    <h1>Jukebox Hero</h1>
+    <p>Welcome to Jukebox Hero, the music trivia game where you pick the genre. Compare you score against others in yor genre, then against every player ever.</p>
+    <br>
+    <div id="tab-container" class="tab-container">
+        <ul class="etabs">
+
+            <li class="tab"><a href="#UserInfo">Set Up Test</a></li>
+            <li class="tab"><a href="#Quiz">Test of Doom</a></li>
+            <li class="tab"><a href="#Results">Reckoning</a></li>
+        </ul>
+        <div class="panel-container">
+            <div class="" id="UserInfo">
+                <form id="userForm">
+                    <legend id="h2">Player Information</legend>
+                    <hr>
+                    <label for="uName">Username: </label>
+                    <input type="text" name="userName" value="" id="uName">
+                    <br>
+                    <br>
+                    <!--<input type="radio" name="gDecision" value="2017 Top 40" id="top40">
+                    <label for="top40">2017 Top 40</label>
+                    <input type="radio" name="gDecision" value="Country" id="Country">
+                    <label for="Country">Country</label>
+                    <input type="radio" name="gDecision" value="Techno" id="Techno">
+                    <label for="Techno">Techno</label>
+                    <input type="radio" name="gDecisions" value="Swing" id="Swing">
+                    <label for="Swing">Swing</label> -->
+                    <input type="radio" name="gDecisions" value="World" id="World">
+                    <label for="World">World Music</label>
+                    <input type="radio" name="gDecisions" value="Holiday" id="Holiday">
+                    <label for="Holiday">Holiday</label>
+                    <br>
+                    <br>
+                    <label for="dateDefault">Today: </label>
+                    <input type="date" name="day" value="" id="dateDefault">
+                    <br>
+                    <br>
+                    <button type="button" id="userSet">Submit</button>
+                </form>
+            </div>
+            
+            <div class="hidden" id="Quiz">
+                <form id= "quizForm">
+                    <h2>Question One</h2>
+                    <!-- Multiple choice question -->
+                    <span id="QuestionOne"></span>
+                    <br><br>
+                    <input type="radio" name="Q1options" id="Q1A">
+                    <label for="Q1A"><span id='Q1Aspan'></span></label>
+                    <br>
+                    <input type="radio" name="Q1options" id="Q1B">
+                    <label for="Q1B"><span id='Q1Bspan'></span></label>
+                    <br>
+                    <input type="radio" name="Q1options" id="Q1C">
+                    <label for="Q1C"><span id='Q1Cspan'></span></label>
+                    <br>
+                    <input type="radio" name="Q1options" id="Q1D">
+                    <label for="Q1D"><span id='Q1Dspan'></span></label>
+                    <br><br>
+                    <button type="button" class="submitQ" id="submitQ1">Submit</button>
+                    <hr>
+                    
+                    <h2>Question Two</h2>
+                    <!-- Hangman style, phrase check -->
+                    <span id="QuestionTwo"></span>
+                    <span id="Q2hint"></span>
+                    <div id="Q2blanks"></div>
+                    <br>
+                    <input type="text" name="Q2input" id="Q2input">
+                    <br><br>
+                    <button type="button" class="submitQ" id="submitQ2">Submit</button>
+                    <hr>
+                    
+                    <h2>Question Three</h2>
+                    <!-- Year input -->
+                    <span id="QuestionThree"></span>
+                    <br><br>
+                    <input type="number" name="Q3input" id="Q3input" min=1500 max=2020>
+                    <br><br>
+                    <button type="button" class="submitQ" id="submitQ3">Submit</button>
+                    <hr>
+                    
+                    <h2>Question Four</h2>
+                    <!-- Hangman style, word check -->
+                    <span id="QuestionFour"></span>
+                    <div id="Q4blanks"></div>
+                    <br>
+                    <input type="text" name="Q4input" id="Q4input">
+                    <br><br>
+                    <button type="button" class="submitQ" id="submitQ4">Submit</button>
+                    
+                    <h2>Question Five</h2>
+                    <!-- Multiple choice question -->
+                    <span id="QuestionFive"></span>
+                    <br><br>
+                    <input type="radio" name="Q5options" id="Q5A" value="">
+                    <label for="Q5A"><span id='Q5Aspan'></span></label>
+                    <br>
+                    <input type="radio" name="Q5options" id="Q5B" value="">
+                    <label for="Q5B"><span id='Q5Bspan'></span></label>
+                    <br>
+                    <input type="radio" name="Q5options" id="Q5C" value="">
+                    <label for="Q5C"><span id='Q5Cspan'></span></label>
+                    <br>
+                    <input type="radio" name="Q5options" id="Q5D" value="">
+                    <label for="Q5D"><span id='Q5Dspan'></span></label>
+                    <br><br>
+                    <button type="button" class="submitQ" id="submitQ5">Submit</button>
+                    <br><br>
+                    <hr>
+                    <button type="button" class="submitQ" id="submitAll">Results</button>
+                </form>
+            </div>
+            
+            <div class="hidden" id="Results">
+                <form>
+                    <h2>Top Scores Genre</h2>
+                    <span id="scoreGenre"></span>
+                    <hr>
+                    <h2>Top Scores All Time</h2>
+                    <span id="scoreAllTime"></span>
+                    <br><br>
+                    <button type="button" id="playAgain">Play Again</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <script src="jquery.hashchange.min.js"></script>
+    <script src="jquery.easytabs.min.js"></script>
+    <script src="MusicTest.js"></script>
+</body>
+<footer>All music used is the property of their artists, Theresa owns nothing. Please study up online if your score is below 50.</footer>
+
+</html>
